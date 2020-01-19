@@ -25,6 +25,7 @@ func NewCmdKubeWide(in io.Reader, out, err io.Writer) *cobra.Command {
 	}
 
 	cmds.AddCommand(NewCmdContext(ioStreams))
+	cmds.AddCommand(NewCmdKubectl(ioStreams))
 
 	return cmds
 }
