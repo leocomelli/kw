@@ -2,26 +2,15 @@
  
 .DEFAULT_GOAL := all
 
+# Development
+# ---------------------------------------------------------------------------------
+
 # Install the dependencies of build
 
 setup:
 	@go get golang.org/x/lint/golint
 	@go get golang.org/x/tools/cmd/goimports
 	@go get github.com/securego/gosec/cmd/gosec
-
-# Releases
-
-DIST_DIR := dist
-PLATFORMS := linux/amd64 darwin/amd64 windows/amd64
-
-temp = $(subst /, ,$@)
-os = $(word 1, $(temp))
-arch = $(word 2, $(temp))
-
-builds: $(PLATFORMS)
-
-$(PLATFORMS):
-	GOOS=$(os) GOARCH=$(arch) go build -o 'dist/kw_$(os)-$(arch)'
 
 # Check quality of code
 
@@ -58,5 +47,29 @@ test:
 	@go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
 # Run everything
+
 all:
 	@make -s build test verify sec
+
+# Releases
+# ---------------------------------------------------------------------------------
+
+# Create tag
+# TAG_NAME=v0.0.1 make tag
+tag:
+	git tag -a $(TAG_NAME) -m "kube-wide release - $(TAG_NAME)"
+	git push origin $(TAG_NAME)
+
+# Build the source code for many os and arch
+
+DIST_DIR := dist
+PLATFORMS := linux/amd64 darwin/amd64 windows/amd64
+
+temp = $(subst /, ,$@)
+os = $(word 1, $(temp))
+arch = $(word 2, $(temp))
+
+builds: $(PLATFORMS)
+
+$(PLATFORMS):
+	GOOS=$(os) GOARCH=$(arch) go build -o 'dist/kw_$(os)-$(arch)'
