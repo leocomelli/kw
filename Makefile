@@ -2,14 +2,30 @@
  
 .DEFAULT_GOAL := all
 
-GOFILES	= $(shell find . -type f -name '*.go' -not -path "./.git/*")
+# Install the dependencies of build
 
 setup:
 	@go get golang.org/x/lint/golint
-	@go get golang.org/x/tools/cmd/goimports	
+	@go get golang.org/x/tools/cmd/goimports
+	@go get github.com/securego/gosec/cmd/gosec
 
-build:
-	@export GO111MODULE=on;go build ./...
+# Releases
+
+DIST_DIR := dist
+PLATFORMS := linux/amd64 darwin/amd64 windows/amd64
+
+temp = $(subst /, ,$@)
+os = $(word 1, $(temp))
+arch = $(word 2, $(temp))
+
+builds: $(PLATFORMS)
+
+$(PLATFORMS):
+	GOOS=$(os) GOARCH=$(arch) go build -o 'dist/kw_$(os)-$(arch)'
+
+# Check quality of code
+
+GOFILES	= $(shell find . -type f -name '*.go' -not -path "./.git/*")
 
 fmt:
 	$(eval FMT_LOG := $(shell mktemp -t gofmt.XXXXX))
@@ -18,19 +34,29 @@ fmt:
 	
 imports:
 	$(eval IMP_LOG := $(shell mktemp -t goimp.XXXXX))
-	@goimports -d -e -l $(GOFILES) > $(IMP_LOG) || true
+	@$(GOPATH)/bin/goimports -d -e -l $(GOFILES) > $(IMP_LOG) || true
 	@[ ! -s "$(IMP_LOG)" ] || (echo "goimports failed:" | cat - $(IMP_LOG) && false)
 
 lint:
-	@golint -set_exit_status $(shell go list ./...)
+	@$(GOPATH)/bin/golint -set_exit_status $(shell go list ./...)
 
 verify:
 	@make -s fmt
 	@make -s imports
 	@make -s lint
 
+# Inspect source code for security problems
+sec:
+	@gosec -quiet ./...
+
+# Build the source code for current os and arch
+build:
+	@export GO111MODULE=on;go build ./...
+
+# Run the tests
 test:
 	@go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
+# Run everything
 all:
-	@make -s build test verify
+	@make -s build test verify sec

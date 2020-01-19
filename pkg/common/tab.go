@@ -23,5 +23,5 @@ func TabPrint(w io.Writer, headers []string, data [][]string) {
 		fmt.Fprintln(tw, strings.Join(d, string(tab)))
 	}
 
-	tw.Flush()
+	_ = tw.Flush()
 }

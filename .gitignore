@@ -17,4 +17,4 @@ vendor/
 # cli
 coverage.txt
 kube-wide
-kw
+kw*
