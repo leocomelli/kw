@@ -40,7 +40,7 @@ sec:
 
 # Build the source code for current os and arch
 build:
-	@export GO111MODULE=on;go build ./...
+	@export GO111MODULE=on;go build
 
 # Run the tests
 test:
