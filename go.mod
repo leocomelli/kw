@@ -1,4 +1,4 @@
-module github.com/leocomelli/kube-wide
+module github.com/leocomelli/kw
 
 go 1.13
 

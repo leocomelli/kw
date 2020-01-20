@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/leocomelli/kube-wide/pkg/common"
-	"github.com/leocomelli/kube-wide/pkg/config"
+	"github.com/leocomelli/kw/pkg/common"
+	"github.com/leocomelli/kw/pkg/config"
 	"github.com/spf13/cobra"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 	"k8s.io/client-go/tools/clientcmd"
@@ -17,25 +17,25 @@ import (
 var (
 	getExample = templates.Examples(`
 		# List all contexts.
-		kube-wide ctx
+		kw ctx
 
 		# List all contexts in ps output format with more information (such as namespace).
-		kube-wide ctx -o wide
+		kw ctx -o wide
 
 		# Modify the current context using the interactive mode
-		kube-wide ctx -i
+		kw ctx -i
 
 		# Modify the current context
-		kube-wide ctx minikube
+		kw ctx minikube
 
 		# Switch to the previous context
-		kube-wide ctx -
+		kw ctx -
 
 		# Modify the current context and its namespace
-		kube-wide ctx minikube:kube-system
+		kw ctx minikube:kube-system
 
 		# Modify the current context and switch to the previous namespace
-		kube-wide ctx minikube:-
+		kw ctx minikube:-
 		`)
 )
 

@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/leocomelli/kube-wide/pkg/config"
+	"github.com/leocomelli/kw/pkg/config"
 	"github.com/stretchr/testify/assert"
 )
 

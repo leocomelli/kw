@@ -19,8 +19,8 @@ func NewCmdKubeWide(in io.Reader, out, err io.Writer) *cobra.Command {
 	ioStreams := genericclioptions.IOStreams{In: in, Out: out, ErrOut: err}
 
 	cmds := &cobra.Command{
-		Use:   "kube-wide",
-		Short: "kube-wide is an extension of kubectl to help us manage our kubernetes clusters",
+		Use:   "kw",
+		Short: "kw is an extension of kubectl to help us manage our kubernetes clusters",
 		Long:  ``,
 	}
 

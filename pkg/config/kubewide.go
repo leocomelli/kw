@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	defaultPath = "~/.kube/.kube-wide.yml"
+	defaultPath = "~/.kube/.kw.yml"
 
 	previousContextKey   = "context"
 	previousNamespaceKey = "namespace"
@@ -60,7 +60,7 @@ func (c *KubeWideConfig) path() error {
 func (c *KubeWideConfig) read() error {
 	f, err := ioutil.ReadFile(c.pathname)
 	if err != nil {
-		return fmt.Errorf("error reading the kube-wide config file: %w", err)
+		return fmt.Errorf("error reading the kw config file: %w", err)
 	}
 	return yaml.Unmarshal(f, c)
 }
@@ -69,7 +69,7 @@ func (c *KubeWideConfig) read() error {
 func (c *KubeWideConfig) Write() error {
 	b, err := yaml.Marshal(c)
 	if err != nil {
-		return fmt.Errorf("error writing the kube-wide config file: %w", err)
+		return fmt.Errorf("error writing the kw config file: %w", err)
 	}
 
 	return ioutil.WriteFile(c.pathname, b, 0644)

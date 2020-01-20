@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/leocomelli/kube-wide/cmd"
+	"github.com/leocomelli/kw/cmd"
 )
 
 func main() {
