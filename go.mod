@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/ktr0731/go-fuzzyfinder v0.2.0
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/spf13/cobra v0.0.5
+	github.com/spf13/cobra v0.0.6
 	github.com/stretchr/testify v1.5.0
 	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/api v0.17.3
