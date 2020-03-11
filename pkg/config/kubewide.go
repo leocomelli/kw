@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/mitchellh/go-homedir"
+	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 )
 
@@ -38,6 +39,9 @@ func NewKubeWideConfig() (*KubeWideConfig, error) {
 
 	err = cc.read()
 	if err != nil {
+		if _, ok := errors.Cause(err).(*os.PathError); ok {
+			return cc, nil
+		}
 		return nil, err
 	}
 
@@ -50,7 +54,6 @@ func (c *KubeWideConfig) path() error {
 		var err error
 		c.pathname, err = homedir.Expand(defaultPath)
 		if err != nil {
-			return fmt.Errorf("could not define the default path: %w", err)
 		}
 	}
 
@@ -60,7 +63,7 @@ func (c *KubeWideConfig) path() error {
 func (c *KubeWideConfig) read() error {
 	f, err := ioutil.ReadFile(c.pathname)
 	if err != nil {
-		return fmt.Errorf("error reading the kw config file: %w", err)
+		return errors.Wrapf(err, "error reading the kw config file: %s", c.pathname)
 	}
 	return yaml.Unmarshal(f, c)
 }
