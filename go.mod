@@ -13,7 +13,7 @@ require (
 	k8s.io/cli-runtime v0.17.4
 	k8s.io/client-go v0.17.3
 	k8s.io/kubectl v0.17.3
-	k8s.io/kubernetes v1.17.3
+	k8s.io/kubernetes v1.17.4
 )
 
 replace (

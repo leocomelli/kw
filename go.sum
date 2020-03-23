@@ -563,6 +563,7 @@ golang.org/x/crypto v0.0.0-20190611184440-5c40567a22f8/go.mod h1:yigFU9vqHzYiE8U
 golang.org/x/crypto v0.0.0-20190617133340-57b3e21c3d56/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586 h1:7KByu05hhLed2MO29w7p1XfZvZ13m8mub3shuVftRs0=
 golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
+golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190125153040-c74c464bbbf2/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190312203227-4b39c73a6495/go.mod h1:ZjyILWgesfNpC6sMxTJOJm9Kp84zZh5NQWvqDGG3Qr8=
@@ -767,6 +768,8 @@ k8s.io/kubernetes v1.17.2 h1:g1UFZqFQsYx88xMUks4PKC6tsNcekxe0v06fcVGRwVE=
 k8s.io/kubernetes v1.17.2/go.mod h1:NbNV+69yL3eKiKDJ+ZEjqOplN3BFXKBeunzkoOy8WLo=
 k8s.io/kubernetes v1.17.3 h1:zWCppkLfHM+hoLqfbsrQ0cJnYw+4vAvedI92oQnjo/Q=
 k8s.io/kubernetes v1.17.3/go.mod h1:gt28rfzaskIzJ8d82TSJmGrJ0XZD0BBy8TcQvTuCI3w=
+k8s.io/kubernetes v1.17.4 h1:hnz5goC7sf4LyG9kjJv6eBBJ/8DeD6TL3UAdCoHpaJE=
+k8s.io/kubernetes v1.17.4/go.mod h1:T2iWC2zSz7Nq5mQvvFPQB8mc2sEBIAdjMJPxavtZkcg=
 k8s.io/legacy-cloud-providers v0.17.1/go.mod h1:AWMb5OLBTn+K1jrW1bRTa8aXM6L66OnBG1+4wQEfqOM=
 k8s.io/metrics v0.17.1 h1:29wf4SnTip8pNOUbGp5PICKoWvryMLRPKLPuw/BSOU4=
 k8s.io/metrics v0.17.1/go.mod h1:dphDhzjA1KR/nQXtXEQzoQyQXk5ViSJO85Ky8QKwBPM=
