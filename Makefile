@@ -8,9 +8,9 @@
 # Install the dependencies of build
 
 setup:
-	@go get golang.org/x/lint/golint
-	@go get golang.org/x/tools/cmd/goimports
-	@go get github.com/securego/gosec/cmd/gosec
+	@go get golang.org/x/lint/golint@v0.0.0-20200302205851-738671d3881b
+	@go get golang.org/x/tools/cmd/goimports@v0.0.0-20200402223321-bcf690261a44
+	@go get github.com/securego/gosec/cmd/gosec@v0.0.0-20200401082031-e946c8c39989
 
 # Check quality of code
 

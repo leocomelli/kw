@@ -75,7 +75,7 @@ func (c *KubeWideConfig) Write() error {
 		return fmt.Errorf("error writing the kw config file: %w", err)
 	}
 
-	return ioutil.WriteFile(c.pathname, b, 0644)
+	return ioutil.WriteFile(c.pathname, b, 0600)
 }
 
 // PreviousContext returns the previous context, otherwise empty
