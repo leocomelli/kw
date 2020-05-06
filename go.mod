@@ -3,7 +3,7 @@ module github.com/leocomelli/kw
 go 1.13
 
 require (
-	github.com/ktr0731/go-fuzzyfinder v0.2.0
+	github.com/ktr0731/go-fuzzyfinder v0.2.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v0.0.7
