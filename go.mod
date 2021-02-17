@@ -3,12 +3,12 @@ module github.com/leocomelli/kw
 go 1.13
 
 require (
-	github.com/ktr0731/go-fuzzyfinder v0.2.1
+	github.com/ktr0731/go-fuzzyfinder v0.3.2
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/cobra v0.0.7
 	github.com/stretchr/testify v1.7.0
-	gopkg.in/yaml.v2 v2.3.0
+	github.com/spf13/cobra v1.1.1
+	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools v2.2.0+incompatible
 	k8s.io/api v0.17.4
 	k8s.io/apimachinery v0.17.4
