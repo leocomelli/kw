@@ -3,13 +3,24 @@ module github.com/leocomelli/kw
 go 1.13
 
 require (
-	github.com/ktr0731/go-fuzzyfinder v0.5.0
+	github.com/Azure/go-autorest/autorest v0.11.18 // indirect
+	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
+	github.com/google/uuid v1.2.0 // indirect
+	github.com/imdario/mergo v0.3.12 // indirect
+	github.com/kr/text v0.2.0 // indirect
+	github.com/ktr0731/go-fuzzyfinder v0.5.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/onsi/ginkgo v1.14.1 // indirect
 	github.com/onsi/gomega v1.10.2 // indirect
 	github.com/pkg/errors v0.9.1
+	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
+	golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a // indirect
+	golang.org/x/net v0.0.0-20210505214959-0714010a04ed // indirect
+	golang.org/x/oauth2 v0.0.0-20210628180205-a41e5a781914 // indirect
+	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba // indirect
+	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/api v0.17.4
 	k8s.io/apimachinery v0.17.4
