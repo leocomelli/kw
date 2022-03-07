@@ -7,7 +7,7 @@ require (
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/kr/text v0.2.0 // indirect
-	github.com/ktr0731/go-fuzzyfinder v0.5.1
+	github.com/ktr0731/go-fuzzyfinder v0.6.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/onsi/ginkgo v1.14.1 // indirect
 	github.com/onsi/gomega v1.10.2 // indirect
